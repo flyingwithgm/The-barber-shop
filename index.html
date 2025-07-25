@@ -3,346 +3,174 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Barber Shop – Accra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <title>The Barber Shop – Urban Edge Accra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --navy: #222B45;
-      --gold: #FFD700;
-      --amber: #FFB347;
-      --white: #fff;
-      --gray: #F4F6F8;
-      --green: #2ECC40;
-      --text: #222;
-      --accent: var(--amber);
+    :root{
+      --slate-gray: #2E2E2E;
+      --cool-blue: #0077B6;
+      --ivory: #F8F8F8;
+      --copper: #B87333;
     }
     html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Montserrat", Arial, sans-serif; }
+
     body {
-      background: var(--gray);
-      color: var(--text);
-      font-family: "Inter", sans-serif;
-      margin: 0;
-      padding: 0;
+      background: var(--slate-gray);
+      color: var(--ivory);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.5s;
     }
     header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 18px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 12px #0002;
+      background: var(--cool-blue);
+      color: var(--ivory);
+      padding: 2em 0 1em 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      text-align: center;
+      animation: fadeInDown 1s;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 2rem;
-      letter-spacing: 2px;
-      color: var(--gold);
+    nav {
+      background: var(--slate-gray);
+      color: var(--ivory);
+      text-align: center;
+      padding: 1em 0;
+      font-size: 1.05em;
+      letter-spacing: 1px;
+      animation: fadeInDown 1.2s;
     }
     nav a {
-      color: var(--white);
-      margin-left: 32px;
+      color: var(--cool-blue);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.08rem;
-      transition: color .2s;
+      margin: 0 1.5em;
+      border-bottom: 2px solid var(--copper);
+      transition: color 0.3s, border-bottom 0.3s;
     }
     nav a:hover {
-      color: var(--accent);
+      color: var(--copper);
+      border-bottom: 2px solid var(--cool-blue);
     }
-    .hero {
-      background: linear-gradient(120deg, var(--navy) 60%, var(--amber) 100%);
-      color: var(--white);
-      padding: 80px 0 50px;
-      text-align: center;
+
+    section {
+      background: var(--ivory);
+      color: var(--slate-gray);
+      border-radius: 16px;
+      margin: 2em auto;
+      padding: 2em;
+      max-width: 800px;
+      box-shadow: 0 8px 24px rgba(46,46,46,0.06);
+      animation: slideUp 1.2s;
     }
-    .hero h1 {
-      font-size: 3.7rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      text-shadow: 0 4px 12px #0005;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      margin-bottom: 32px;
-      color: var(--white);
-      opacity: 0.92;
-    }
-    .btn {
-      background: var(--accent);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 1.12rem;
-      padding: 14px 38px;
-      border: none;
-      border-radius: 28px;
-      cursor: pointer;
-      box-shadow: 0 2px 12px #FFD70055;
-      transition: background .2s, transform .2s;
-      text-decoration: none;
+    h1, h2, h3 {
+      color: var(--slate-gray);
+      border-bottom: 2px solid var(--copper);
       display: inline-block;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.8em;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
-    .btn:hover {
-      background: var(--gold);
-      transform: scale(1.08);
-      color: var(--navy);
-    }
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 18px 40px;
+    h1 {
+      font-size: 2.9em;
+      margin-bottom: 0.6em;
     }
     h2 {
-      text-align: center;
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 40px;
-      letter-spacing: 1px;
+      font-size: 2em;
     }
-    .services-grid {
-      display: grid;
-      gap: 32px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    h3 {
+      font-size: 1.3em;
     }
-    .service-card {
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 2px 12px #FFD70018;
-      padding: 32px 24px;
-      text-align: center;
-      transition: box-shadow .2s, transform .2s;
-      border: 1px solid #FFD70033;
+    p {
+      font-size: 1.15em;
+      margin-bottom: 1.5em;
+      opacity: 0.96;
+      line-height: 1.7em;
     }
-    .service-card:hover {
-      box-shadow: 0 8px 24px #FFD70044;
-      transform: translateY(-4px) scale(1.03);
-    }
-    .service-card h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--navy);
-    }
-    .service-card span {
-      display: block;
-      font-size: 1.07rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 9px;
-    }
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px #FFD70018;
-      transition: transform .23s;
-      border: 2.5px solid #FFD70033;
-    }
-    .gallery img:hover {
-      transform: scale(1.04) rotate(-1deg);
-      box-shadow: 0 6px 24px #FFD70033;
-    }
-    /* About */
-    .about p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      background: #fff8;
-      color: var(--navy);
-      border-radius: 10px;
-      padding: 24px 16px;
-      box-shadow: 0 2px 12px #FFD70011;
-      text-align: center;
-    }
-    /* Testimonials */
-    .testimonial-slider {
-      max-width: 720px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 2px 14px #FFD70022;
-      padding: 44px 20px;
-      border: 1px solid #FFD70022;
-      text-align: center;
-    }
-    .testimonial-slide {
-      display: none;
-      opacity: 0;
-      transition: opacity .6s;
-    }
-    .testimonial-slide.active {
-      display: block;
-      opacity: 1;
-    }
-    .testimonial-slide p {
-      font-size: 1.06rem;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 18px;
-      background: #FFD70022;
+    .cta, button {
+      background: var(--cool-blue);
+      color: var(--ivory);
+      border: none;
       border-radius: 6px;
-      padding: 10px;
-      display: inline-block;
+      padding: 0.75em 2em;
+      font-weight: 600;
+      font-size: 1.08em;
+      cursor: pointer;
+      transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 14px rgba(0,119,182,0.11);
+      margin: 1em 0;
     }
-    .testimonial-slide h4 {
-      color: var(--accent);
-      font-weight: 700;
+    .cta:hover, button:hover {
+      background: var(--copper);
+      color: var(--ivory);
+      box-shadow: 0 6px 24px rgba(184,115,51,0.13);
     }
-    /* Map */
-    .map-container {
-      height: 350px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid var(--gold);
-      box-shadow: 0 2px 14px #FFD70022;
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    /* WhatsApp */
-    .wa-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--green);
-      color: var(--white);
-      padding: 16px;
-      border-radius: 50%;
-      box-shadow: 0 2px 16px #2ECC4088;
-      z-index: 99;
-      transition: transform .2s;
-      border: 2px solid #fff5;
-    }
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 24px #2ECC40AA;
+    .icon {
+      color: var(--copper);
+      font-size: 1.6em;
+      margin-right: 0.3em;
+      vertical-align: middle;
     }
     footer {
+      background: var(--slate-gray);
+      color: var(--ivory);
       text-align: center;
-      padding: 40px 18px;
-      background: var(--navy);
-      color: var(--gold);
-      font-size: 1.05rem;
-      border-top: 2px solid var(--gold);
+      padding: 1.4em 0;
+      font-size: 1em;
       letter-spacing: 1px;
+      margin-top: 3em;
+      border-top: 1.5px solid var(--copper);
     }
-    @media (max-width: 700px) {
-      header, .section, .testimonial-slider { padding-left: 10px; padding-right: 10px; }
-      .hero h1 { font-size: 2rem; }
-      h2 { font-size: 1.35rem; }
+    /* Animations */
+    @keyframes fadeInDown {
+      0% { opacity:0; transform:translateY(-40px);}
+      100% { opacity:1; transform:translateY(0);}
+    }
+    @keyframes slideUp {
+      0% { opacity:0; transform:translateY(40px);}
+      100% { opacity:1; transform:translateY(0);}
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">THE BARBER SHOP</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#location">Location</a>
-    </nav>
+    <h1>The Barber Shop</h1>
+    <p>Urban Edge Accra – Modern Style, Classic Craft</p>
   </header>
-  <section id="home" class="hero">
-    <h1>THE BARBER SHOP</h1>
-    <p>Modern grooming for Accra’s gentlemen. Book your fresh look today!</p>
-    <a class="btn" href="https://wa.me/233596015667?text=Hi, I’d like to book a haircut at The Barber Shop.">Book Now</a>
-  </section>
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Regular Cut</h3><span>100 GHS</span>
-      </div>
-      <div class="service-card">
-        <h3>Beard Trim</h3><span>80 GHS</span>
-      </div>
-      <div class="service-card">
-        <h3>Enhancements</h3><span>120 GHS</span>
-      </div>
-      <div class="service-card">
-        <h3>Kids Cut</h3><span>80 GHS</span>
-      </div>
-      <div class="service-card">
-        <h3>Hot Towel Shave</h3><span>150 GHS</span>
-      </div>
-      <div class="service-card">
-        <h3>Full Package</h3><span>300 GHS</span>
-      </div>
-    </div>
-  </section>
-  <section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1560093230-101306845069?auto=format&fit=crop&w=800&q=60" alt="Barber 1"/>
-      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=60" alt="Barber 2"/>
-      <img src="https://images.unsplash.com/photo-1599351431613-3521e7c32ff0?auto=format&fit=crop&w=800&q=60" alt="Barber 3"/>
-      <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=800&q=60" alt="Barber 4"/>
-    </div>
-  </section>
-  <section id="about" class="section about">
-    <h2>About Us</h2>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="services">
+    <h2><span class="icon">✂️</span>Our Services</h2>
     <p>
-      The Barber Shop delivers sharp cuts and premium grooming in Accra’s Westlands Blvd. Our skilled barbers combine classic techniques and modern styles to keep you looking your best. Step in for a welcoming vibe, professional service, and a look you’ll love.
+      Precision cuts, fades, beard trims, classic shaves, and styling. Our experienced barbers deliver sleek looks in a relaxed, modern setting.
+    </p>
+    <button class="cta" onclick="location.href='#booking'">Book an Appointment</button>
+  </section>
+  <section id="about">
+    <h2><span class="icon">👨‍🦲</span>About Us</h2>
+    <p>
+      At Urban Edge Accra, we blend classic barbering with contemporary flair. Our team is dedicated to providing top-notch service and fresh vibes.
     </p>
   </section>
-  <section id="testimonials" class="section">
-    <h2>What Clients Say</h2>
-    <div class="testimonial-slider" id="testimonial-slider">
-      <div class="testimonial-slide active">
-        <p>“The best fade I’ve ever had. Highly recommend!”</p>
-        <h4>— Kwame A.</h4>
-      </div>
-      <div class="testimonial-slide">
-        <p>“Friendly staff and a super clean shop.”</p>
-        <h4>— Ama S.</h4>
-      </div>
-      <div class="testimonial-slide">
-        <p>“Great value and easy booking on WhatsApp.”</p>
-        <h4>— Nii L.</h4>
-      </div>
-    </div>
+  <section id="booking">
+    <h2><span class="icon">📅</span>Book Now</h2>
+    <p>
+      Reserve your spot online for a seamless experience. Walk-ins welcome, but appointments recommended!
+    </p>
+    <button class="cta">Book Now</button>
   </section>
-  <section id="location" class="section">
-    <h2>Find Us</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7978712018864!2d-0.2048316847444775!3d5.562584833735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnNDUuMyJOIDDCsDEyJzE3LjQiVw!5e0!3m2!1sen!2sgh!4v1651234567890!5m2!1sen!2sgh" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+  <section id="contact">
+    <h2><span class="icon">📞</span>Contact</h2>
+    <p>
+      Visit us at Urban Edge Accra, or call <a href="tel:+233123456789" style="color:var(--cool-blue);font-weight:bold;">+233 123 456 789</a>.<br>
+      Email: <a href="mailto:info@urbanedgebarber.com" style="color:var(--cool-blue);font-weight:bold;">info@urbanedgebarber.com</a>
+    </p>
   </section>
   <footer>
-    © 2025 The Barber Shop – 58 Westlands Blvd, Accra
+    &copy; 2025 The Barber Shop – Urban Edge Accra | Crafted with style
   </footer>
-  <a class="wa-float" href="https://wa.me/233596015667?text=Hi, I’d like to book a haircut at The Barber Shop.">
-    <!-- WhatsApp SVG icon -->
-    <svg width="30" height="30" fill="#fff" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.03 22l5.25-1.38a9.94 9.94 0 004.76 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.23 12.18c-.17.44-.84 1-1.23 1.06-.32.05-.72.24-3.87-1.14-2.72-1.2-4.48-4.2-4.62-4.4-.14-.2-.02-.31.11-.44.11-.11.24-.29.36-.44.12-.15.16-.26.24-.44.08-.18.04-.34-.02-.48s-.44-1.06-.6-1.46c-.16-.38-.33-.33-.44-.34-.11-.01-.24-.01-.37-.01s-.29.04-.44.24c-.15.2-.59.58-.59 1.42 0 .84.61 1.65.7 1.77s1.2 1.83 2.9 2.94c2.01 1.21 2.83 1.28 3.15 1.28.32 0 1.04-.42 1.19-.83.15-.41.15-.76.1-.83-.05-.07-.18-.11-.35-.2z"/></svg>
-  </a>
-  <script>
-    /* Testimonial Slider */
-    const slides = document.querySelectorAll('.testimonial-slide');
-    let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 4000);
-  </script>
 </body>
 </html>
