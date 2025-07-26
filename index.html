@@ -4,123 +4,129 @@
   <meta charset="UTF-8">
   <title>The Barber Shop – Westlands Blvd</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-  :root{
-    --bg:#111;
-    --primary:#c00000;
-    --accent:#ffe4e1;
-    --soft:#2a2a2a;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--accent);overflow-x:hidden}
-
-  /* soft loader */
-  .loader{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999}
-  .pulse{width:60px;height:60px;border:3px solid var(--soft);border-radius:50%;animation:pulse 1.5s ease-out infinite}
-  @keyframes pulse{0%{transform:scale(0);opacity:1}100%{transform:scale(1);opacity:0}}
-
-  nav{background:rgba(17,17,17,.85);backdrop-filter:blur(10px);position:fixed;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;z-index:99}
-  nav a{color:var(--accent);margin-left:1rem;text-decoration:none;font-weight:600;transition:.3s}
-  nav a:hover{color:var(--primary)}
-
-  .hero{height:100vh;background:url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=1350&q=80') center/cover fixed;display:flex;align-items:center;justify-content:center;text-align:center}
-  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.7),rgba(192,0,0,.3))}
-  .hero-content{position:relative;z-index:2;animation:fade 1.5s ease-out}
-  @keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-  .hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:700;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .btn{background:var(--primary);color:#fff;border:none;padding:1em 2.5em;border-radius:50px;font-weight:600;cursor:pointer;transition:.3s}
-  .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(192,0,0,.4)}
-
-  section{padding:5rem 2rem;max-width:1200px;margin:auto}
-  h2{text-align:center;font-size:2.2rem;color:var(--primary);margin-bottom:2rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-
-  .service-card{background:var(--soft);border-radius:12px;padding:2rem;text-align:center;transition:.4s}
-  .service-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.5)}
-  .service-card h3{color:var(--accent);margin-bottom:.5rem}
-  .service-card p{font-weight:600;margin-bottom:1rem}
-  .btn-book{background:var(--primary);color:#fff;border:none;padding:.7em 1.4em;border-radius:50px;font-weight:600;cursor:pointer;transition:.3s}
-  .btn-book:hover{background:#a00000}
-
-  .map-wrap{height:450px;border-radius:12px;overflow:hidden;margin-top:2rem}
-  .map-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(100%) contrast(120%) brightness(0.85)}
-  .map-cta{text-align:center;margin-top:1rem}
-  .map-cta a{color:var(--accent);text-decoration:underline;font-weight:600}
-
-  footer{background:var(--soft);text-align:center;padding:2rem;color:var(--accent)}
-  .float{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:#fff;padding:1rem;border-radius:50%;font-size:1.2rem;text-decoration:none;animation:float 2s ease-in-out infinite}
-  @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)}}
+    :root{
+      --bg:#000;
+      --primary:#ff3c00;
+      --accent:#ffea00;
+      --soft:#111;
+      --text:#fff;
+      --muted:#aaa;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+    html{scroll-behavior:smooth;font-size:18px}
+    body{background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+    nav{position:fixed;top:0;width:100%;background:var(--soft);display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;z-index:99;border-bottom:1px solid #333}
+    nav a{color:var(--text);margin-left:1.2rem;text-decoration:none;font-weight:600;font-size:1rem}
+    nav a:hover{color:var(--primary)}
+    .hero{height:100vh;background:url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=1350&q=90') center/cover fixed;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.75)}
+    .hero h1{position:relative;z-index:2;font-size:clamp(2.5rem,8vw,5rem);font-weight:700;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .btn{background:var(--primary);color:#000;border:none;padding:.9em 2.2em;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:.3s}
+    .btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 20px var(--primary)}
+    section{padding:5rem 1rem;max-width:1200px;margin:auto}
+    h2{text-align:center;font-size:2.4rem;color:var(--primary);margin-bottom:2.5rem;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem}
+    .card{background:var(--soft);border:1px solid #222;border-radius:14px;padding:2.2rem;text-align:center;transition:.3s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 0 18px rgba(255,60,0,.6)}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem}
+    .gallery figure{background:var(--soft);border-radius:12px;overflow:hidden}
+    .gallery img{width:100%;height:300px;object-fit:cover;display:block}
+    .gallery figcaption{padding:.6rem .8rem;font-size:.95rem;color:var(--accent);font-weight:600;background:#000}
+    .map-wrap{height:500px;border-radius:12px;overflow:hidden;margin-top:2.5rem;border:1px solid #333}
+    .map-wrap iframe{width:100%;height:100%;border:none}
+    footer{background:var(--soft);text-align:center;padding:2rem;color:var(--muted)}
+    .float{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:#000;padding:1rem;border-radius:50%;font-size:1.3rem;font-weight:700;text-decoration:none;box-shadow:0 0 18px var(--primary);transition:.3s}
+    .float:hover{transform:scale(1.1)}
   </style>
 </head>
 
 <body>
-  <div class="loader"><div class="pulse"></div></div>
-
   <nav>
-    <span style="font-weight:700;font-size:1.3rem;color:var(--primary)">THE BARBER SHOP</span>
+    <span style="font-weight:700;font-size:1.2rem;color:var(--primary)">THE BARBER SHOP</span>
     <div>
       <a href="#services">Services</a>
+      <a href="#why">Why&nbsp;Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#serving">Process</a>
       <a href="#map">Location</a>
     </div>
   </nav>
 
   <section class="hero">
-    <div class="hero-content">
+    <div>
       <h1>Sharp Cuts • Sharp Style</h1>
-      <p>58 Westlands Boulevard, Accra</p>
+      <p style="margin:1rem 0;font-size:1.1rem">58 Westlands Boulevard, Accra</p>
       <a href="#services" class="btn">Book Now</a>
     </div>
   </section>
 
   <section id="services">
-    <h2 data-aos="fade-up">Prices & Booking</h2>
+    <h2>Prices & Booking</h2>
     <div class="grid">
-      <div class="service-card" data-aos="fade-up"><h3>Sharp Fade</h3><p>GHS 100</p><a class="btn-book" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Sharp%20Fade%20-%20time%3F">Book</a></div>
-      <div class="service-card" data-aos="fade-up"><h3>Beard Trim</h3><p>GHS 80</p><a class="btn-book" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Beard%20Trim%20-%20time%3F">Book</a></div>
-      <div class="service-card" data-aos="fade-up"><h3>Enhancement</h3><p>GHS 120</p><a class="btn-book" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Enhancement%20-%20time%3F">Book</a></div>
-      <div class="service-card" data-aos="fade-up"><h3>Hot Towel Shave</h3><p>GHS 150</p><a class="btn-book" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Hot%20Towel%20Shave%20-%20time%3F">Book</a></div>
+      <div class="card"><h3>Sharp Fade</h3><p>GHS 100</p><a class="btn" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Sharp%20Fade%20-%20time%3F">Book</a></div>
+      <div class="card"><h3>Beard Trim</h3><p>GHS 80</p><a class="btn" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Beard%20Trim%20-%20time%3F">Book</a></div>
+      <div class="card"><h3>Enhancement</h3><p>GHS 120</p><a class="btn" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Enhancement%20-%20time%3F">Book</a></div>
+      <div class="card"><h3>Hot Towel Shave</h3><p>GHS 150</p><a class="btn" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20Hot%20Towel%20Shave%20-%20time%3F">Book</a></div>
     </div>
   </section>
 
-  <!-- FIXED MAP SECTION -->
-  <section id="map">
-    <h2 data-aos="fade-up">Find Us</h2>
-    <div class="map-wrap" data-aos="fade-up">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7978712018864!2d-0.2048316847444775!3d5.562584833735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnNDUuMyJOIDDCsDEyJzE3LjQiVw!5e0!3m2!1sen!2sgh!4v1719410000000"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+  <section id="why">
+    <h2>Why Choose Us?</h2>
+    <div class="grid">
+      <div class="card"><h3>Master Barbers</h3><p>10+ years of experience in modern & classic cuts.</p></div>
+      <div class="card"><h3>Premium Products</h3><p>Only cruelty-free, salon-grade hair & beard care.</p></div>
+      <div class="card"><h3>Chill Vibe</h3><p>Cold drinks, good music, and great conversation.</p></div>
     </div>
-    <p class="map-cta">
-      <a href="https://maps.google.com/?q=58+Westlands+Boulevard,+Accra" target="_blank">Open in Google Maps →</a>
-    </p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1595476108014-9c7708d0a06b?auto=format&fit=crop&w=1200&q=90" alt="Clean Fade">
+        <figcaption>Clean Fade & Lineup</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1593702288056-7cc519139720?auto=format&fit=crop&w=1200&q=90" alt="Beard Trim">
+        <figcaption>Precision Beard Trim</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=90" alt="Hot Towel Shave">
+        <figcaption>Hot-Towel Shave</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1554519558-73dd0eae1a35?auto=format&fit=crop&w=1200&q=90" alt="Shop Interior">
+        <figcaption>Shop Interior</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="serving">
+    <h2>How We Serve You</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Book on WhatsApp</h3><p>Pick a slot in seconds.</p></div>
+      <div class="card"><h3>2. Sit Back</h3><p>Enjoy a drink while we work our magic.</p></div>
+      <div class="card"><h3>3. Leave Sharper</h3><p>Walk out looking & feeling your best.</p></div>
+    </div>
+  </section>
+
+  <section style="text-align:center">
+    <h2>Loved the experience?</h2>
+    <p style="margin-bottom:1.5rem">Tell your crew on WhatsApp so they can look sharp too.</p>
+    <a class="btn" href="https://wa.me/?text=I%20just%20got%20the%20sharpest%20cut%20at%20The%20Barber%20Shop%2C%2058%20Westlands%20Blvd%2C%20Accra!%20Book%20via%20wa.me/233596015667">Share Now</a>
+  </section>
+
+  <section id="map">
+    <h2>Find Us</h2>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7978712018864!2d-0.2048316847444775!3d5.562584833735516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnNDUuMyJOIDDCsDEyJzE3LjQiVw!5e0!3m2!1sen!2sgh!4v1719410000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p style="text-align:center;margin-top:1rem"><a href="https://maps.google.com/?q=58+Westlands+Boulevard,Accra" target="_blank" style="color:var(--accent)">Open in Google Maps →</a></p>
   </section>
 
   <footer>© 2025 THE BARBER SHOP – Built for men, by men</footer>
   <a class="float" href="https://wa.me/233596015667?text=Hi%20The%20Barber%20Shop%2C%20I%20want%20to%20book">💬</a>
-
-  <script>
-    /* loader fade */
-    window.addEventListener('load',()=>document.querySelector('.loader').style.opacity='0');
-    /* gentle scroll reveal */
-    const io=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.style.opacity=1;
-          entry.target.style.transform='translateY(0)';
-        }
-      });
-    },{threshold:.2});
-    document.querySelectorAll('[data-aos]').forEach(el=>{
-      el.style.opacity=0;
-      el.style.transform='translateY(30px)';
-      el.style.transition='1s';
-      io.observe(el);
-    });
-  </script>
 </body>
 </html>
